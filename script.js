@@ -17,13 +17,11 @@ function calcularPorcentaje() {
 
     const pagoInteres = (tasaMensual * monto * meses);
 
-    const pagoFinal = (pagoInteres + monto);
-
     const cuotaMensual = (pagoFinal / meses);
 
     const cuotaMensualConSeguro = cuotaMensual + seguro;
 
-
+    const pagoFinal = cuotaMensualConSeguro * meses;
     // Mostrar resultados en la interfaz
 
     document.getElementById('resumen-monto').innerText = '$' + monto.toLocaleString('es-ES');
@@ -32,10 +30,10 @@ function calcularPorcentaje() {
     document.getElementById('resumen-seguro').innerText = '$' + seguro.toLocaleString('es-ES');
 
     document.getElementById('cuotaMensual').innerText = '$' + cuotaMensual.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('cuotaMensualConSeguro').innerText = '$' + cuotaMensualConSeguro.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('totalInteres').innerText = '$' + pagoInteres.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('pagoFinal').innerText = '$' + pagoFinal.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    document.getElementById('cuotaMensualConSeguro').innerText = '$' + cuotaMensualConSeguro.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-
+    
     // AGREGAMOS LA CLASE PARA ACTIVAR LA ANIMACIÓN FADE-IN
     document.getElementById('bloque-resumen').classList.add('mostrar');
 }

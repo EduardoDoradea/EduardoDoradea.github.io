@@ -34,6 +34,11 @@
                 <input type="number" id="meses" placeholder="Ej. 12" min="0">
             </div>
 
+            <div class="input-group">
+                <label>Seguro</label>
+                <input type="number" id="seguro" placeholder="Ej. 6000" min="0">
+            </div>
+
             <button class="btn-link" onclick="calcularPorcentaje()">Calcular</button>
         </div>
 
@@ -49,12 +54,13 @@
                     <p>Monto Solicitado: <b id="resumen-monto">$0.00</b></p>
                     <p>Tasa Anual: <b id="resumen-porcentaje">0%</b></p>
                     <p>Plazo: <b id="resumen-meses">0 meses</b></p>
-
+                    <p>Seguro: <b id="resumen-seguro">$0.00</b></p>
                     <hr>
 
                     <p>Cuota Mensual: <b id="cuotaMensual">$0.00</b></p>
                     <p>Total Interes: <b id="totalInteres">$0.00</b></p>
                     <p>Pago Total: <b id="pagoFinal">$0.00</b></p>
+                    <p>Cuota Mensual con Seguro: <b id="cuotaMensualConSeguro">$0.00</b></p>
                 </div>
             </div>
 

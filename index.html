@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e293b">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Préstamos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!---BLOQUE DE DATOS DE PRESTAMO--->
+
+    <div class="main-wrapper">
+
+        <div class="calculator-container">
+            <h2>Calculadora de Intereses</h2>
+
+            <div class="input-group">
+                <label>Monto del Préstamo ($)</label>
+                <input type="number" id="monto" placeholder="Ej. 1000" min="0">
+            </div>
+
+            <div class="input-group">
+                <label>Tasa de Interés Anual (%)</label>
+                <input type="number" id="porcentaje" placeholder="Ej. 2.5" min="0" step="0.1">
+            </div>
+
+            <div class="input-group">
+                <label>Plazo (Meses)</label>
+                <input type="number" id="meses" placeholder="Ej. 12" min="0">
+            </div>
+
+            <button class="btn-link" onclick="calcularPorcentaje()">Calcular</button>
+        </div>
+
+        <!---BLOQUE DE RESUMEN INTERESES--->
+
+        <div class="calculator-container summary-overlay" id="bloque-resumen">
+            <h2>Resumen de su Crédito</h2>
+
+            <div class="result result-visible" id="result">
+                <h3>Cuota Mensual Estimada</h3>
+
+                <div class="details">
+                    <p>Monto Solicitado: <b id="resumen-monto">$0.00</b></p>
+                    <p>Tasa Anual: <b id="resumen-porcentaje">0%</b></p>
+                    <p>Plazo: <b id="resumen-meses">0 meses</b></p>
+
+                    <hr>
+
+                    <p>Cuota Mensual: <b id="cuotaMensual">$0.00</b></p>
+                    <p>Total Interes: <b id="totalInteres">$0.00</b></p>
+                    <p>Pago Total: <b id="pagoFinal">$0.00</b></p>
+                </div>
+            </div>
+
+            <button class="btn-link btn-mt-20" onclick="limpiarCampos()">Volver y Limpiar</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js');
+            });
+        }
+    </script>
+</body>
+
+</html>

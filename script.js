@@ -1,5 +1,4 @@
 
-
 function calcularPorcentaje() {
     const monto = parseFloat(document.getElementById('monto').value);
     const porcentajeInteres = parseFloat(document.getElementById('porcentaje').value);

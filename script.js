@@ -10,13 +10,15 @@ function calcularPorcentaje() {
         return;
     }
 
-    const porcentajeFinal = ((porcentajeInteres / 100) * meses);
+    const porcentaje = (porcentajeInteres / 100);
 
-    const pagoInteres = (porcentajeFinal * monto);
+    const tasaMensual = (porcentaje / 12);
 
-    const cuotaMensual = (pagoInteres + monto) / meses;
+    const pagoInteres = (tasaMensual * monto * meses);
 
-    const pagoFinal = pagoInteres + monto;
+    const pagoFinal = (pagoInteres + monto);
+
+    const cuotaMensual = (pagoFinal / meses);
 
     // Mostrar resultados en la interfaz
 

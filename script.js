@@ -54,31 +54,43 @@ function limpiarCampos() {
 let eventoInstalacion;
 const botonInstalar = document.getElementById('btnInstalar');
 
+// 1. FUNCIÓN PARA VERIFICAR SI YA ESTÁ INSTALADA
+function verificarInstalacion() {
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+        || window.navigator.standalone
+        || document.referrer.includes('android-app://');
+
+    if (isStandalone && botonInstalar) {
+        botonInstalar.style.display = 'none';
+        console.log('Modo App detectado: Ocultando botón');
+        return true;
+    }
+    return false;
+}
+
+// 2. EJECUTAR AL CARGAR
+window.addEventListener('load', verificarInstalacion);
+
+// 3. LÓGICA DEL PROMPT (Solo si no está instalada)
 window.addEventListener('beforeinstallprompt', (e) => {
-    // Evita que el navegador muestre su propio aviso aburrido
+    if (verificarInstalacion()) return; // Si ya es app, no hace nada
+
     e.preventDefault();
-    // Guarda el evento para usarlo después
     eventoInstalacion = e;
-    // Muestra tu botón personalizado
     botonInstalar.style.display = 'block';
 });
 
 botonInstalar.addEventListener('click', async () => {
     if (eventoInstalacion) {
-        // Muestra el prompt de instalación
         eventoInstalacion.prompt();
-        // Espera a ver si el usuario aceptó
         const { outcome } = await eventoInstalacion.userChoice;
         if (outcome === 'accepted') {
-            console.log('El usuario instaló la app');
             botonInstalar.style.display = 'none';
         }
         eventoInstalacion = null;
     }
 });
 
-// Ocultar el botón si la app ya está instalada
 window.addEventListener('appinstalled', () => {
     botonInstalar.style.display = 'none';
-    console.log('App instalada con éxito');
 });

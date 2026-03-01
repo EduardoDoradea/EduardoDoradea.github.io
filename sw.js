@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calculadora-cache-v3'; // <--- Cada vez que hagas un cambio grande, cambia este v1 a v2, v3, etc.
+const CACHE_NAME = 'calculadora-cache-v4'; // <--- Cada vez que hagas un cambio grande, cambia este v1 a v2, v3, etc.
 const urlsToCache = [
     './',
     './index.html',

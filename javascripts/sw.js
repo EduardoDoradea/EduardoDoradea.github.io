@@ -1,9 +1,9 @@
-const CACHE_NAME = 'calculadora-cache-v5'; // <--- Cada vez que hagas un cambio grande, cambia este v1 a v2, v3, etc.
+const CACHE_NAME = 'calculadora-cache-v1.1'; // <--- Cada vez que hagas un cambio grande, cambia este v1 a v2, v3, etc.
 const urlsToCache = [
     './',
     './index.html',
     './style.css',
-    './script.js',
+    './calculadoraIntereses.js',
     './novatica.png'
 ];
 

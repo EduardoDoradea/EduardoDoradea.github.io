@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#1e293b">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Novatica</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="main-wrapper home-wrapper">
+        <h2> Bienvenido a opciones de Calculadora </h2>
+        <!---<img src="../novatica.png" alt="Novativa" style="width: 50px; height: 50px;">-->
+
+        <div class="calculator-container home-card">
+            <h3 class="home-card-title" style="text-align: center;">Calculadora Intereses</h3>
+
+            <a href="ventanaIntereses.html" class="btn-link">Abrir Calc Intereses</a>
+        </div>
+
+        <div class="calculator-container home-card">
+            <h3 class="home-card-title" style="text-align: center;">Calculadora IVA</h3>
+
+            <a href="ventanaIva.html" class="btn-link">Abrir Calc IVA</a>
+        </div>
+
+        <div class="calculator-container home-card">
+            <h3 class="home-card-title" style="text-align: center;">Descargar Aplicación 📲</h3>
+            
+            <button class="btn-link" id="btnInstalar" style="display: none;"> Descargar Aplicación </button>
+        </div>
+    </div>
+
+    <script src="../javascripts/homePage.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('../javascripts/sw.js');
+            });
+        }
+    </script>
+</body>
+
+</html>

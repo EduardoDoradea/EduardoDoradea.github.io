@@ -2,12 +2,12 @@
 <html lang="es">
 
 <head>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="../manifest.json">
     <meta name="theme-color" content="#1e293b">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Préstamos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -41,9 +41,8 @@
 
             <button class="btn-link" onclick="calcularPorcentaje()">Calcular</button>
             
-            <button class="btn-link" id="btnInstalar" style="display: none;" >
-                📲 Descargar Aplicación
-            </button>
+            <a href="homePage.html" class="btn-link">Regresar al menu</a>
+            
         </div>
 
         <!---BLOQUE DE RESUMEN INTERESES--->
@@ -73,15 +72,14 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="../javascripts/calculadoraIntereses.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js');
+                navigator.serviceWorker.register('../javascripts/sw.js');
             });
         }
     </script>
 </body>
-
 </html>

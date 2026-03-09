@@ -12,7 +12,6 @@ const urlsToCache = [
     './novatica.png'
 ];
 
-
 // 1. INSTALACIÓN: Guarda los archivos iniciales
 self.addEventListener('install', event => {
     // Forza al Service Worker recién instalado a convertirse en el activo

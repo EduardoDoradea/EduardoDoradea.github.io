@@ -1,7 +1,8 @@
 const CACHE_NAME = 'cache-proyecto-v1.2'; 
 
 const urlsToCache = [
-    './', 
+    './',
+    './index.html', 
     './html/homePage.html',
     './html/ventanaIntereses.html',
     './html/ventanaIva.html',

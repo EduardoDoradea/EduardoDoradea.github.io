@@ -2,7 +2,7 @@
     "name": "Calculadora de Novatica",
     "short_name": "Intereses Calc",
     "description": "Simulador de préstamos con cálculo de intereses y seguros.",
-    "start_url": "./homePage.html",
+    "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#1e293b",
     "theme_color": "#1e293b",

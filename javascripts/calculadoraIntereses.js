@@ -28,15 +28,15 @@ function calcularPorcentaje() {
     const interesFinalConSeguro = pagoFinalConSeguro - monto;
     // Mostrar resultados en la interfaz
 
-    document.getElementById('resumen-monto').innerText = '$' + monto.toLocaleString('es-ES');
+    document.getElementById('resumen-monto').innerText = '$' + monto.toLocaleString('en-US');
     document.getElementById('resumen-porcentaje').innerText = porcentajeInteres + '%';
     document.getElementById('resumen-meses').innerText = meses + ' meses';
-    document.getElementById('resumen-seguro').innerText = '$' + seguro.toLocaleString('es-ES');
+    document.getElementById('resumen-seguro').innerText = '$' + seguro.toLocaleString('en-US');
 
-    document.getElementById('cuotaMensual').innerText = '$' + cuotaMensual.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    document.getElementById('cuotaMensualConSeguro').innerText = '$' + cuotaMensualConSeguro.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    document.getElementById('totalInteres').innerText = '$' + interesFinalConSeguro.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    document.getElementById('pagoFinal').innerText = '$' + pagoFinalConSeguro.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('cuotaMensual').innerText = '$' + cuotaMensual.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('cuotaMensualConSeguro').innerText = '$' + cuotaMensualConSeguro.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('totalInteres').innerText = '$' + interesFinalConSeguro.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('pagoFinal').innerText = '$' + pagoFinalConSeguro.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
     // AGREGAMOS LA CLASE PARA ACTIVAR LA ANIMACIÓN FADE-IN
     document.getElementById('bloque-resumen').classList.add('mostrar');
@@ -50,47 +50,3 @@ function limpiarCampos() {
     // QUITAMOS LA CLASE PARA QUE DESAPAREZCA SUAVEMENTE
     document.getElementById('bloque-resumen').classList.remove('mostrar');
 }
-
-let eventoInstalacion;
-const botonInstalar = document.getElementById('btnInstalar');
-
-// 1. FUNCIÓN PARA VERIFICAR SI YA ESTÁ INSTALADA
-function verificarInstalacion() {
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
-        || window.navigator.standalone
-        || document.referrer.includes('android-app://');
-
-    if (isStandalone && botonInstalar) {
-        botonInstalar.style.display = 'none';
-        console.log('Modo App detectado: Ocultando botón');
-        return true;
-    }
-    return false;
-}
-
-// 2. EJECUTAR AL CARGAR
-window.addEventListener('load', verificarInstalacion);
-
-// 3. LÓGICA DEL PROMPT (Solo si no está instalada)
-window.addEventListener('beforeinstallprompt', (e) => {
-    if (verificarInstalacion()) return; // Si ya es app, no hace nada
-
-    e.preventDefault();
-    eventoInstalacion = e;
-    botonInstalar.style.display = 'block';
-});
-
-botonInstalar.addEventListener('click', async () => {
-    if (eventoInstalacion) {
-        eventoInstalacion.prompt();
-        const { outcome } = await eventoInstalacion.userChoice;
-        if (outcome === 'accepted') {
-            botonInstalar.style.display = 'none';
-        }
-        eventoInstalacion = null;
-    }
-});
-
-window.addEventListener('appinstalled', () => {
-    botonInstalar.style.display = 'none';
-});

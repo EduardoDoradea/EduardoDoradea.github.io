@@ -19,10 +19,10 @@ function calculoIvaPagoCuenta() {
     const totalPago = pagoCuentaCalculado + ivaCalculado;
 
     // Mostrar resultados en la interfaz
-    document.getElementById('monto_final').innerText = '$' + monto.toLocaleString('es-ES');
-    document.getElementById('iva_calculado').innerText = '$' + ivaCalculado.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    document.getElementById('pagocuenta_calculado').innerText = '$' + pagoCuentaCalculado.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    document.getElementById('total_pagar').innerText = '$' + totalPago.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('monto_final').innerText = '$' + monto.toLocaleString('en-US');
+    document.getElementById('iva_calculado').innerText = '$' + ivaCalculado.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('pagocuenta_calculado').innerText = '$' + pagoCuentaCalculado.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('total_pagar').innerText = '$' + totalPago.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     
     // AGREGAMOS LA CLASE PARA ACTIVAR LA ANIMACIÓN FADE-IN
     document.getElementById('bloque-resumen').classList.add('mostrar');

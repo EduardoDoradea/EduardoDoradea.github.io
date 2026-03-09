@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calculadora-cache-v1.1'; 
+const CACHE_NAME = 'cache-proyecto-v1.2'; 
 
 const urlsToCache = [
     './', 

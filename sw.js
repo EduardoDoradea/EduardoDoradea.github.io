@@ -1,11 +1,17 @@
-const CACHE_NAME = 'calculadora-cache-v1.1'; // <--- Cada vez que hagas un cambio grande, cambia este v1 a v2, v3, etc.
+const CACHE_NAME = 'calculadora-cache-v1.1'; 
+
 const urlsToCache = [
-    './',
-    './index.html',
+    './', 
+    './html/homePage.html',
+    './html/ventanaIntereses.html',
+    './html/ventanaIva.html',
     './style.css',
-    './calculadoraIntereses.js',
+    './javascripts/calculadoraIntereses.js', // Le indicamos que entre a la carpeta javascripts
+    './javascripts/calculadoraIva.js',
+    './javascripts/homePage.js',
     './novatica.png'
 ];
+
 
 // 1. INSTALACIÓN: Guarda los archivos iniciales
 self.addEventListener('install', event => {

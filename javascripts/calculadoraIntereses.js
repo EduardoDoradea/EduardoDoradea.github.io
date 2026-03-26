@@ -26,6 +26,7 @@ function calcularPorcentaje() {
     const pagoFinalConSeguro = (cuotaMensualConSeguro * meses);
 
     const interesFinalConSeguro = pagoFinalConSeguro - monto;
+    
     // Mostrar resultados en la interfaz
 
     document.getElementById('resumen-monto').innerText = '$' + monto.toLocaleString('en-US');
@@ -33,7 +34,6 @@ function calcularPorcentaje() {
     document.getElementById('resumen-meses').innerText = meses + ' meses';
     document.getElementById('resumen-seguro').innerText = '$' + seguro.toLocaleString('en-US');
 
-    document.getElementById('cuotaMensual').innerText = '$' + cuotaMensual.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('cuotaMensualConSeguro').innerText = '$' + cuotaMensualConSeguro.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('totalInteres').innerText = '$' + interesFinalConSeguro.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('pagoFinal').innerText = '$' + pagoFinalConSeguro.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });

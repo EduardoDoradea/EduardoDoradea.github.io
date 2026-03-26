@@ -24,16 +24,6 @@
                 <input type="number" id="monto_ingresado" placeholder="Ej. 1000" min="0">
             </div>
 
-            <div class="input-group">
-                <label>IVA (%)</label>
-                <input type="text" value="13%" disabled>
-            </div>
-
-            <div class="input-group">
-                <label>Pago a Cuenta (%)</label>
-                <input type="text" value="1.75%" disabled>
-            </div>
-
             <button class="btn-link" onclick="calculoIvaPagoCuenta()">Calcular</button>
             
             <a href="../index.html" class="btn-link">Regresar al menu</a>
@@ -49,11 +39,9 @@
 
                 <div class="details">
                     <p>Monto Ingresado: <b id="monto_final">$0.00</b></p>
-                    <p>IVA: <b>13%</b></p>
-                    <p>Pago a Cuenta: <b>1.75%</b></p>
                     <hr>
                     
-                    <p>Calculo</p>
+                    <p>Calculos: </p>
                     <p>IVA: <b id="iva_calculado">$0.00</b></p>
                     <p>Pago a Cuenta: <b id="pagocuenta_calculado">$0.00</b></p>
                     <p>Total a pagar: <b id="total_pagar">$0.00</b></p>

@@ -1,14 +1,16 @@
-const CACHE_NAME = 'cache-proyecto-v1.9'; 
+const CACHE_NAME = 'cache-proyecto-v2.0'; 
 
 const urlsToCache = [
     './',
     './index.html',
     './html/ventanaIntereses.html',
     './html/ventanaIva.html',
+    './html/ventanaPrestamo.html',
     './style.css',
     './javascripts/calculadoraIntereses.js', // Le indicamos que entre a la carpeta javascripts
     './javascripts/calculadoraIva.js',
     './javascripts/homePage.js',
+    './javascripts/calculadoraPrestamos.js',
     './novatica.png'
 ];
 

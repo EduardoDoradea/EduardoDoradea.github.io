@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#1e293b">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Impuestos</title>
+    <title>Calculadora de Prestamo</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -17,14 +17,18 @@
     <div class="main-wrapper">
 
         <div class="calculator-container">
-            <h2>Calculadora de Impuestos</h2>
+            <h2>Calculadora de Prestamos</h2>
 
             <div class="input-group">
-                <label>Monto ($)</label>
-                <input type="number" id="monto_ingresado" placeholder="Ej. 1000" min="0">
+                <label>Prestamo ($)</label>
+                <input type="number" id="prestamo" placeholder="Ej. 1000" min="0">
+                <label>Intereses (%)</label>
+                <input type="number" id="intereses" placeholder="Ej. 5" min="0">
+                <label>Cuotas: (Meses)</label>
+                <input type="number" id="cuotas" placeholder="Ej. 50" min="0">
             </div>
 
-            <button class="btn-link" onclick="calculoIvaPagoCuenta()">Calcular</button>
+            <button class="btn-link" onclick="calculoPrestamo()">Calcular</button>
             
             <a href="../index.html" class="btn-link">Regresar al menu</a>
         </div>
@@ -35,16 +39,19 @@
             <h2>Resumen de Cuentas</h2>
 
             <div class="result result-visible" id="result">
-                <h3>IVA & Pago a Cuenta</h3>
+                <h3>Calculo de Prestamo</h3>
 
                 <div class="details">
-                    <p>Monto Ingresado: <b id="monto_final">$0.00</b></p>
+                    <p>Prestamo Ingresado: <b id="prestamo_final">$0.00</b></p>
                     <hr>
                     
                     <p>Calculos: </p>
-                    <p>IVA: <b id="iva_calculado">$0.00</b></p>
-                    <p>Pago a Cuenta: <b id="pagocuenta_calculado">$0.00</b></p>
-                    <p>Total a pagar: <b id="total_pagar">$0.00</b></p>
+                    
+                    <p>Cuota Mensual con Intereses: <b id="cuota_mensual">$0.00</b></p>
+                    <p>Interes Mensual: <b id="interes_mensual">$0.00</b></p>
+                    <p>Capital Mensual sin intereses: <b id="capital_mensual">$0.00</b></p>
+                    <p>Nuevo Saldo: <b id="nuevo_saldo">$0.00</b></p>
+
                 </div>
             </div>
 
@@ -54,7 +61,7 @@
 
     </div>
 
-    <script src="../javascripts/calculadoraIva.js"></script>
+    <script src="../javascripts/calculadoraPrestamos.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
